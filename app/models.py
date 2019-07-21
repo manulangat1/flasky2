@@ -30,8 +30,8 @@ class Task(db.Model):
     id = db.Column(db.Integer,primary_key=True)
     name = db.Column(db.String(64),index=True)
     details = db.Column(db.String(120))
-    image_filename = db.Column(db.String(),default=None,nullable=True)
-    image_url = db.Column(db.String,default=None,nullable=True)
+    # image_filename = db.Column(db.String(),default=None,nullable=True)
+    # image_url = db.Column(db.String,default=None,nullable=True)
     user_id = db.Column(db.Integer,db.ForeignKey('user.id'))
     posted = db.Column(db.DateTime,default=datetime.utcnow)
     def __repr__(self):

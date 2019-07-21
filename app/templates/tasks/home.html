@@ -1,0 +1,28 @@
+{% extends 'users/base.html'%}
+{% block title %}
+    <title>{{title}}</title>
+{% endblock %}
+{% block body %}
+<div class="container">
+  <div class="form">
+    <form  method="post">
+      {{form.hidden_tag()}}
+      <div class="form-group">
+        <label for="">{{form.name.label}}</label>
+        {{form.name(size=32,class="text-input")}}
+      </div>
+      <div class="form-group">
+        <label for="">{{form.details.label}}</label>
+        {{form.details(size=32,class="text-input")}}
+      </div>
+      {{form.submit()}}
+    </form>
+  </div>
+  <div class="tasks">
+    {% for ta in tas %}
+       <h1>{{ta.name}}</h1>
+    {% endfor %}
+  </div>
+  <h1>Hello there</h1>
+</div>
+{% endblock %}

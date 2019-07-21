@@ -30,5 +30,7 @@ def create_app(config_class=Config):
     from app import models
     # register the blueprint
     from app.users.routes import users
+    from app.tasks.routes import tasks
     app.register_blueprint(users)
+    app.register_blueprint(tasks)
     return app
