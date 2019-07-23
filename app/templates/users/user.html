@@ -1,0 +1,16 @@
+{% extends 'users/base.html'%}
+{% block title %}
+    <title>{{title}}</title>
+{% endblock %}
+{% block body %}
+<div class="container">
+  <<div class="profile">
+    {{user.username}}
+    {{user.about_me}}
+    {{user.last_seen}}
+    {% if user == current_user %}
+      <p><a href="{{url_for('users.edit_profile')}}">Edit your profile</a></p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
